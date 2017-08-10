@@ -1,0 +1,9 @@
+h3.center
+  'All conversations
+
+.container
+  ul.collection
+    - @conversations.each do |user|
+      li.collection-item.avatar
+        span.title
+          = link_to user.full_name, user_chat_path(user.id)

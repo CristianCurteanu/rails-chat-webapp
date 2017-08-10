@@ -1,0 +1,12 @@
+.container
+  .row
+    h3 = link_to @user.full_name, chats_path
+
+  .row
+    #messages
+      = render @messages
+
+  .row
+    form
+      label = 'Say something:'
+      input type="text" data-behavior="room_speaker" data-current="#{current_user.id}" data-other="#{@user.id}"
