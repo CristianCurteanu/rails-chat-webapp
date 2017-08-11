@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-
   # Users
   get  '/register' => 'users#new'
   post '/register' => 'users#create'
+  post '/search'   => 'users#search'
 
   # Sessions
   get  '/login'    => 'sessions#new'
