@@ -1,9 +1,11 @@
 
 # Tasks backlog:
  - `PROGRESS` Add Materialize restyling              
- - `PROGRESS` Add user registration and login        
- - `  OPEN  ` Add user chat rooms                    
- - `  OPEN  ` Add user connections                   
+ - `  DONE  ` Add user registration and login        
+ - `  DONE  ` Add user chat rooms                    
+ - `PROGRESS` Add user connections        
+ - `PROGRESS` Add user search
+ - `  OPEN  ` Add message read
  - `  OPEN  ` Add message encryption (JSON Web Token)
  - `  OPEN  ` Migrate to React/VueJS                 
 

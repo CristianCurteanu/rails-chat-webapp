@@ -20,6 +20,15 @@ class User < ApplicationRecord
         array << message.sender
       end
     end
-    users.uniq
+    users.sort_by(&:first_name).uniq
+  end
+
+  def self.search_with(regexp)
+    users = self.pluck(:id, :first_name, :last_name)
+    users.select do |a|
+      "#{a.second} #{a.last}" =~ regexp
+    end.each_with_object([]) do |obj, a|
+      a << { id: obj.first, full_name: obj.second + " " + obj.last }
+    end
   end
 end

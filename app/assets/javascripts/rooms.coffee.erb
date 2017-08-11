@@ -1,0 +1,33 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+
+$(document).on 'keyup', 'input.autocomplete', (event) ->
+  $('ul.autocomplete-content').empty()
+  formData = new FormData()
+  formData.append('query', event.target.value)
+  if event.which <= 90 && event.which >= 48
+    fetch('/search', { method: 'POST', body: formData })
+      .then((resp)  ->
+        if resp.ok
+          resp.json()
+      ).then((data) ->
+        unless data is null
+          for user in data
+            link = document.createElement('a')
+            link.append(user.full_name)
+            link.href = ['/chat', user.id].join('/')
+            listItem = document.createElement('li')
+            listItem.append(link)
+            $('ul.autocomplete-content').append(listItem)
+
+          console.log(data)
+      ).catch((err) ->
+        null
+      )
+
+$(document).on 'click', 'ul.autocomplete-content a', (e) ->
+  $('ul.autocomplete-content').empty()
+  window.location(e.target.href)
+  e.preventDefault()
+  return
