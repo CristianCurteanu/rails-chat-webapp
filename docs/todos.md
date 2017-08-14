@@ -3,8 +3,11 @@
  - `PROGRESS` Add Materialize restyling              
  - `  DONE  ` Add user registration and login        
  - `  DONE  ` Add user chat rooms                    
- - `PROGRESS` Add user connections        
- - `PROGRESS` Add user search
+ - `  DONE  ` Add user connections        
+ - `  DONE  ` Add user search
+ - `  OPEN  ` Add WS update for chats
+ - `  OPEN  ` Add email account validation
+ - `  OPEN  ` Issue: Current user message can appear in other chat when socket is open!
  - `  OPEN  ` Add message read
  - `  OPEN  ` Add message encryption (JSON Web Token)
  - `  OPEN  ` Migrate to React/VueJS                 

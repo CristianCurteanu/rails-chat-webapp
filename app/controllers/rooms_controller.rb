@@ -9,7 +9,6 @@ class RoomsController < ApplicationController
   end
 
   def show
-    # @messages = Message.all
     @user = User.find params[:foreign_id]
     @messages = Message.where('receiver_id in (:sender, :receiver) and sender_id in (:sender, :receiver)', sender: current_user.id, receiver: @user.id)
   end
