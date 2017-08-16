@@ -15,8 +15,11 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     if chat.current == data.sender
       return true
     else
+      @playSound()
       chat.other == data.sender
 
+  playSound: ->
+    new Audio('/icq-message.wav').play();
 
   speak: (message, sender, receiver) ->
     @perform 'speak', message: message, sender: sender, receiver: receiver
