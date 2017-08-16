@@ -25,7 +25,7 @@ class User < ApplicationRecord
         array << message.sender
       end
     end
-    users.sort_by(&:first_name).uniq
+    users.reverse.uniq
   end
 
   def self.search_with(regexp)

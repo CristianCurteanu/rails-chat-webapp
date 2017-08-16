@@ -8,6 +8,6 @@ h3.center = "Welcome, #{current_user.first_name}"
       label for='autocomplete-input'
       ul.autocomplete-content.dropdown-content.z-depth-3
 
-  .collection
+  .collection data-current-user-id="#{current_user.id}"
     - @conversations.each do |user|
       = link_to user.full_name, user_chat_path(user.id), class: 'collection-item'
