@@ -8,4 +8,5 @@
     = f.password_field :password_confirmation, input_options('Password confirmation', :password_confirmation)
 
   = f.submit 'Register', class: 'waves-effect waves-light btn'
-  = link_to 'Login', login_path, class: 'waves-effect waves-light btn white z-depth-0'
+.row
+  = link_to 'Already a user? Sign in', login_path, class: 'waves-effect waves-light z-depth-0'

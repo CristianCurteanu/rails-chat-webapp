@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  before_action :authorize
 
   before_action do
     redirect_to root_path unless current_user
@@ -10,6 +11,6 @@ class RoomsController < ApplicationController
 
   def show
     @user = User.find params[:foreign_id]
-    @messages = Message.where('receiver_id in (:sender, :receiver) and sender_id in (:sender, :receiver)', sender: current_user.id, receiver: @user.id)
+    @messages = current_user.messages_with @user
   end
 end

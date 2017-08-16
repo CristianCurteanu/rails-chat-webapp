@@ -1,3 +1,18 @@
 // Place all the styles related to the session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-container {
+  width: 50%;
+  margin-left: 25%;
+  padding: 8%;
+  margin-top: 5%;
+  background: white;
+}
+
+.homepage-body {
+  background: url('/chat_wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
