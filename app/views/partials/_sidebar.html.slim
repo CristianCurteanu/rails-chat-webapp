@@ -1,0 +1,8 @@
+a data-activates="slide-out" class="btn-large waves-effect btn-flat button-collapse"
+  i.material-icons menu
+
+ul#slide-out.side-nav
+  li
+    .user-view
+      h5 = current_user.full_name
+  li = link_to('Logout', logout_path, method: :delete)

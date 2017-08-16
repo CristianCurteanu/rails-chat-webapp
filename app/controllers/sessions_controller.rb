@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  # before_action :session_created, only: :new
+  before_action :session_created, only: :new
 
   def new
   end

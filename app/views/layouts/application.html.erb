@@ -8,7 +8,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <% if current_user %>
+    <body>
+      <%= render 'partials/sidebar' %>
+      <%= yield %>
+    </body>
+  <% else %>
+    <body class="homepage-body">
+      <%= yield %>
+    </body>
+  <% end %>
 </html>
