@@ -13,14 +13,22 @@ class MessageBroadcastJob < ApplicationJob
   private
 
   def render_chat(sender)
-    link_to sender.full_name, user_chat_path(sender.id), class: 'collection-item'
+    renderer.render partial: 'messages/user_list',
+                    locals:  {
+                      currenct_user: sender,
+                      conversations: sender.conversations
+                    }
   end
 
   def render_message(message)
-    ApplicationController.renderer.render partial: 'messages/message',
+    renderer.render partial: 'messages/message',
                                           locals:  {
                                             message:  message
                                           }
+  end
+
+  def renderer
+    @renderer ||= ApplicationController.renderer
   end
 
   def user_chat_path(id)
